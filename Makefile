@@ -16,5 +16,4 @@ uninstall:
 	clear
 	@echo "\n\n -> Módulo de autenticação via pendrive removido com sucesso.\n\n"
 
-addpendrive:
-	./add_pendrive
+
