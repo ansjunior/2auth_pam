@@ -39,28 +39,6 @@ int collect_information(pam_handle_t *pamh, const char * message, int msg_style,
 	return rval;
 }
 
-login_root(){
-	system("clear");
-	
-			struct tm *data_hora_atual;
-		time_t segundos;    
-		time(&segundos);   
-		data_hora_atual = localtime(&segundos);  
-		
-		FILE *log;
-		log = fopen("/etc/pam.d/pam.pdrive/log/login", "a");
-		fprintf(log, "%s", "-> Usuário Root | ");
-		fprintf(log, "%d/", data_hora_atual->tm_mday);
-		fprintf(log, "%d/", data_hora_atual->tm_mon+1);
-		fprintf(log, "%d ", data_hora_atual->tm_year+1900);
-		fprintf(log, "%d:", data_hora_atual->tm_hour);
-		fprintf(log, "%d:", data_hora_atual->tm_min);
-		fprintf(log, "%d\n ", data_hora_atual->tm_sec);
-
-		printf("\n\n  -> Usuário root, liberado acesso sem pendrive.");
-		printf("\n          -> Logando..\n\n");
-		
-}
 
 login_user(){
 	    struct tm *data_hora_atual;
