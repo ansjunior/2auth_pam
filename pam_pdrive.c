@@ -13,11 +13,6 @@
 #include <security/pam_ext.h>
 #include <zconf.h>
 
-#define _GNU_SOURCE 
-#define MAX_PROVIDED_INFORMATION_SIZE 128
-#define MAX_POST_SIZE 1024
-#define MAX_PARAM_SIZE 1024
-#define CRED_BUF_SIZE 4096
 
 PAM_EXTERN int pam_sm_setcred( pam_handle_t *pamh, int flags, int argc, const char **argv ) 
 {
