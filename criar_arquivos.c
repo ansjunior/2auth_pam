@@ -179,7 +179,7 @@ void addUser( char nome[256] ){
         //testando se o arquivo foi realmente criado
         if(pont_arq == NULL)
         {
-        printf("    Erro na abertura do arquivo!");
+        printf("    Error!");
         }
         
         //usando fprintf para armazenar a string no arquivo
@@ -188,32 +188,30 @@ void addUser( char nome[256] ){
         //usando fclose para fechar o arquivo
         fclose(pont_arq);
 
-        puts("    Pendrive cadastrado com sucesso.\n");
+        puts("    Work done successfully\n");
 
 }
 
 int main(int argc, char *argv[]){
     system("clear");
 
-    puts("\n\n-> Para iniciar, certifique-se que o Pendrive esteja conectado.");
-    puts("\n-> Certifique-se que apenas 1 Pendrive esteja conectado.");
-    puts("\n-> Caso nenhum pendrive seja detectado, o programa de instalação será encerrado.");
-    system("read -p \"\nApós seguir as instruções, pressione enter para continuar...\" foo");
+    puts("\n\n-> Attention, pendrive must be plugged in");
+    system("read -p \"\nEnter to begin\" foo");
 
     system("clear"); 
 
-     puts("\n-> Iniciando instalação:");
-    puts("---------------------------------------------------");
+     puts("\n-> Installing:");
+    puts("<><><><><><");
     sleep(2);
 
-    puts("\n-> Criando diretórios de configuração do módulo:");
+    puts("\n-> Creating directories:");
     puts("   '/etc/pam.d/pam.pdrive'");
     puts("   '/etc/pam.d/pam.pdrive/log'");
     makeDirPdrive();
     makeDirLog();
     sleep(2);
 
-    puts("\n-> Criando arquivo que armazena os seriais:");
+    puts("\n-> Creating files to save serials:");
     puts("   '/etc/pam.d/pam.pdrive'");
     puts("   '/etc/pam.d/pam.pdrive/log'");
     makeFileSerial();
@@ -221,11 +219,11 @@ int main(int argc, char *argv[]){
 
     char nome[100]; 
 
-    puts("\n-> Criando primeiro pendrive liberado:");
+    puts("\n-> Allowing pendrive:");
 
     addUser(nome);
 
-    system("read -p \"Pressione enter para continuar...\" foo");
+    system("read -p \"Press enter to continue\" foo");
 
 
 
