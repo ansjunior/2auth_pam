@@ -10,13 +10,13 @@ PAM_EXTERN int pam_sm_setcred( pam_handle_t *pamh, int flags, int argc, const ch
 
 PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, const char **argv ) 
 {
-	int main (){
+	
 		int r;
 		r=system("lsblk --output SERIAL /dev/sdb");
-		return r; }
+		return r; 
 	
 	
-	printf("Teste/n/n");
+	printf(r);
 	return PAM_SUCCESS;
 	
 }
