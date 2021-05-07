@@ -179,14 +179,13 @@ int main(int argc, char *argv[]){
     puts("   '/etc/pam.d/pam.pdrive'");
     puts("   '/etc/pam.d/pam.pdrive/log'");
     makeDirPdrive();
-    makeDirLog();
-    sleep(2);
+     sleep(2);
 
     puts("\n-> Creating files to save serials:");
     puts("   '/etc/pam.d/pam.pdrive'");
     puts("   '/etc/pam.d/pam.pdrive/log'");
     makeFileSerial();
-    makeFileLog(); 
+    
 
     char nome[100]; 
 
