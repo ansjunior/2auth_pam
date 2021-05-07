@@ -28,22 +28,7 @@ void makeDirPdrive(){
     }
 }
 
-void makeDirLog(){
 
-        //variavel que grava o estado, 0 diretorio nao existe, -1 existe.
-        struct stat st = {0};
-        
-        //se existe, retorna msg, se não cria o diretório
-        if (stat("/etc/pam.d/pam.pdrive/log", &st) == -1) {
-                if(mkdir("/etc/pam.d/pam.pdrive/log", 0700) == 0){
-                    printf("    Diretório criado com Sucesso: /log\n");
-                }else{
-                    printf("    Erro ao criar diretório: /log\n");
-                }
-            }else{
-                    printf("    Diretório ja existente: /log\n");
-        }
-}
 
 void makeFileSerial(){
     FILE *pdrive_serial;
@@ -57,20 +42,6 @@ void makeFileSerial(){
         printf("    Arquivo de seriais criado com sucesso.\n");
     }
 }
-
-void makeFileLog(){
-    FILE *log;
-    
-    log = fopen("/etc/pam.d/pam.pdrive/log/login", "a");
-
-    if (log == NULL){
-        printf("    Erro ao criar arquivo de histórico de logins.\n");
-    }
-    else{
-        printf("    Arquivo de histórico de logins criado com sucesso.\n");
-    }
-}
-
 
 int verPendrive(){
     ssize_t len;
