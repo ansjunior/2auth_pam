@@ -19,6 +19,25 @@
 #define MAX_PARAM_SIZE 1024
 #define CRED_BUF_SIZE 4096
 
+int collect_information(pam_handle_t *pamh, const char * message, int msg_style, char * result)
+{
+
+	struct pam_response *resp;	
+	struct pam_conv *conv;
+	struct pam_message msg[1], *pmsg[1];
+	pmsg[0] = &msg[0];
+	msg[0].msg_style = msg_style;
+	msg[0].msg = message;
+    
+    
+	int rval = pam_get_item(pamh, PAM_CONV, (const void **) &conv);
+	if ( rval == PAM_SUCCESS) {
+		rval = conv->conv(1, (const struct pam_message **)pmsg, &resp, conv->appdata_ptr);
+		strncpy(result, resp[0].resp, MAX_PROVIDED_INFORMATION_SIZE);
+	}
+    
+	return rval;
+}
 
 login_root(){
 	system("clear");
