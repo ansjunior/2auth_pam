@@ -14,6 +14,6 @@ uninstall:
 	rm -rf /etc/pam.d/pam.pdrive
 	sed -i '/pam_pdrive/d' /etc/pam.d/system-auth
 	clear
-	@echo "\n\n -> Módulo de autenticação via pendrive removido com sucesso.\n\n"
+	@echo "\n\n -> Two factors auth removed successfully .\n\n"
 
 
