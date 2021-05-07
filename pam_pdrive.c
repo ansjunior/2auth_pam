@@ -16,8 +16,8 @@ PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, cons
 	return r; 
 		if(r == "lsblk: /dev/sdb: not a block device")
 	{
+		printf("aqui mesmo");
 
-		printf("aqui mesmo")
 	}	else{
 	
 		printf(r);
