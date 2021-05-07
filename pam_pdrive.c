@@ -19,9 +19,5 @@ PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, cons
 		printf("aqui mesmo");
 		return PAM_SUCCESS;
 
-	}	else{
-	
-		printf(r);
-		return PAM_SUCCESS;
-		}
+	}
 }
