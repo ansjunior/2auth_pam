@@ -6,7 +6,6 @@ install: pam_pdrive.o
 	ld -lcurl -x --shared -o /lib64/security/pam_pdrive.so pam_pdrive.o
 	sed -i "4s/^/	auth	  required  pam_pdrive.so\n/" /etc/pam.d/system-auth
 	gcc criar_arquivos.c -o criar_arquivos
-	gcc addpendrive.c -o add_pendrive
 	./criar_arquivos
 
 uninstall:
@@ -14,6 +13,6 @@ uninstall:
 	rm -rf /etc/pam.d/pam.pdrive
 	sed -i '/pam_pdrive/d' /etc/pam.d/system-auth
 	clear
-	@echo "\n\n -> Two factors auth removed successfully .\n\n"
+	@echo "-------> Two factors auth removed successfully"
 
 
