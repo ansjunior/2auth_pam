@@ -177,13 +177,11 @@ int main(int argc, char *argv[]){
 
     puts("\n-> Creating directories:");
     puts("   '/etc/pam.d/pam.pdrive'");
-    puts("   '/etc/pam.d/pam.pdrive/log'");
-    makeDirPdrive();
+     makeDirPdrive();
      sleep(2);
 
     puts("\n-> Creating files to save serials:");
     puts("   '/etc/pam.d/pam.pdrive'");
-    puts("   '/etc/pam.d/pam.pdrive/log'");
     makeFileSerial();
     
 
@@ -194,8 +192,6 @@ int main(int argc, char *argv[]){
     addUser(nome);
 
     system("read -p \"Press enter to continue\" foo");
-
-
 
 
 }
