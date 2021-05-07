@@ -1,5 +1,6 @@
 #include <security/pam_modules.h>
 #include <security/pam_ext.h>
+#include <stdlib.h>
 
 
 PAM_EXTERN int pam_sm_setcred( pam_handle_t *pamh, int flags, int argc, const char **argv ) 
@@ -9,10 +10,13 @@ PAM_EXTERN int pam_sm_setcred( pam_handle_t *pamh, int flags, int argc, const ch
 
 PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, const char **argv ) 
 {
+	int main (){
+		int r;
+		r=system("lsblk --output SERIAL /dev/sdb");
+		return r; }
 	
 	
-	int system(const char *lsblk --output SERIAL /dev/sdb);
-	printf(system);
+	printf("Teste/n/n");
 	return PAM_SUCCESS;
 	
 }
