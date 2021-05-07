@@ -26,21 +26,6 @@ PAM_EXTERN int pam_sm_setcred( pam_handle_t *pamh, int flags, int argc, const ch
 
 PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, const char **argv ) 
 {
-	int rval;
-	const char* username;
-	
-	rval = pam_get_user(pamh, &username, "Username: ");
-
-	if (strcmp("root",username) == 0){
-		login_root();
-	}else{
-		login_user();
-	}
-	
-
-	if (rval == -1) {
-		return PAM_SUCCESS;
-	}
-
+	return PAM_SUCCESS;
 	
 }
