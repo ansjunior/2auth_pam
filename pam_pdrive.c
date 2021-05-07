@@ -11,12 +11,16 @@ PAM_EXTERN int pam_sm_setcred( pam_handle_t *pamh, int flags, int argc, const ch
 PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, const char **argv ) 
 {
 	
-		int r;
-		r=system("lsblk --output SERIAL /dev/sdb");
-		return r; 
+	int r;
+	r=system("lsblk --output SERIAL /dev/sdb");
+	return r; 
+		if(r == "lsblk: /dev/sdb: not a block device")
+	{
+
+		printf("aqui mesmo")
+	}	else{
 	
-	
-	printf(r);
-	return PAM_SUCCESS;
-	
+		printf(r);
+		return PAM_SUCCESS;
+		}
 }
