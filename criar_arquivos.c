@@ -27,7 +27,7 @@ void makeDirPdrive(){
 
 
 int main(int argc, char *argv[]){
-    system("clear");
+    
 
     puts("\n\n-> Attention, pendrive must be plugged in");
     system("read -p \"\nEnter to begin\" foo");
@@ -38,7 +38,7 @@ int main(int argc, char *argv[]){
     puts("<><><><><><>");
     sleep(2);
 
-    puts("\n-> Creating directories:");
+    puts("\n-> Creating directory");
     puts("   '/etc/pam.d/pam.pdrive'");
      makeDirPdrive();
      sleep(2);
