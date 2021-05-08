@@ -28,9 +28,7 @@ void makeDirPdrive(){
 
 int main(int argc, char *argv[]){
     
-	char r;
-	char value;
-	
+		
     puts("\n\n-> Attention, pendrive must be plugged in");
     system("read -p \"\nEnter to begin\" foo");
 
@@ -45,12 +43,7 @@ int main(int argc, char *argv[]){
      makeDirPdrive();
      sleep(2);
 
-    r = system("lsblk --output SERIAL /dev/sdb");
-
-    value=strcmp(r,system("lsblk --output SERIAL /dev/sdb"));  
-	if(value == 0){
-	printf("Seriais são iguais");}
-	else{printf("Seriais não são iguais");
+    
 
     system("read -p \"Press enter to continue\" foo");
 
