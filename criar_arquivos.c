@@ -19,7 +19,7 @@ void makeDirPdrive(){
     //se existe, retorna msg, se não cria o diretório
 	if (stat("/etc/pam.d/pam.pdrive", &st) == -1) {
 	mkdir("/etc/pam.d/pam.pdrive", 0700);
-            else{
+	}else{
             printf("    Diretório ja existente: /pam.pdrive\n");
     }
 }
