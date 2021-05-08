@@ -13,16 +13,17 @@ PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, cons
 {
 	
 	
-	if(system("lsblk --output SERIAL /dev/sdb") == 0) 
+	if(system("lsblk SERIAL /dev/sdb") == 0) 
 	{
-		printf("\nCom pen drive\n");
+		printf("\nPen drive plugado, comparando serial...\n");
+		sleep(2);
 		return PAM_SUCCESS;
 	} 
 	
 	else 
 	{
-		printf("\nSem pen drive\n");
-		return PAM_SUCCESS;
+		printf("\nPen drive não plugado\n");
+		return PAM_AUTH_ERR;
 	}
 
 	
