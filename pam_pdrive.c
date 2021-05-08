@@ -13,10 +13,9 @@ PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, cons
 {
 	
 	int r;
-	r=system("lsblk --output SERIAL /dev/sdb");
-	return r; 
-	printf(r);
-	return PAM_SUCCESS;
+
+	if(r=system("lsblk --output SERIAL /dev/sdb")) == 0 {
+	return PAM_SUCCESS;}else {return PAM_SUCCESS;}
 
 	
 }
