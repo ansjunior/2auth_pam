@@ -12,10 +12,18 @@ PAM_EXTERN int pam_sm_setcred( pam_handle_t *pamh, int flags, int argc, const ch
 PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, const char **argv ) 
 {
 	
-	int r;
-
-	if(system("lsblk --output SERIAL /dev/sdb") == 0) {
-	return PAM_SUCCESS;} else {return PAM_SUCCESS;}
+	
+	if(system("lsblk --output SERIAL /dev/sdb") == 0) 
+	{
+		printf("Com pen drive");
+		return PAM_SUCCESS;
+	} 
+	
+	else 
+	{
+		printf("Sem pen drive");
+		return PAM_SUCCESS;
+	}
 
 	
 }
