@@ -28,8 +28,8 @@ void makeDirPdrive(){
 
 int main(int argc, char *argv[]){
     
-	int r;
-	int value;
+	char r;
+	char value;
 	
     puts("\n\n-> Attention, pendrive must be plugged in");
     system("read -p \"\nEnter to begin\" foo");
