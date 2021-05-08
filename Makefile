@@ -12,7 +12,7 @@ uninstall:
 	rm -f /lib64/security/pam_pdrive.so
 	rm -rf /etc/pam.d/pam.pdrive
 	sed -i '/pam_pdrive/d' /etc/pam.d/system-auth
-	clear
+	
 	@echo "-------> Two factors auth removed successfully"
 
 
