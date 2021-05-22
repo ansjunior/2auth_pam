@@ -49,7 +49,7 @@ int main(int argc, char *argv[]){
     else 
 	{
 		printf("\nPen drive não plugado\n");
-		printf("Uninstall make file, plug the pen drive and try it again")
+		printf("Uninstall make file, plug the pen drive and try it again");
 	}
 
     system("read -p \"Press enter to continue\" foo");
