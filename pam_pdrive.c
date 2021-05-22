@@ -18,7 +18,7 @@ PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, cons
 
 	if(system("cat /etc/pam.d/pam.pdrive/teste.txt") == system("cat /etc/pam.d/pam.pdrive/teste.txt"))
 	{
-		printf("seriais iguais");
+		printf("\nseriais iguais\n");
 		sleep(2);
 		return PAM_SUCCESS;
 	}
