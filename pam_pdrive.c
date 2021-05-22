@@ -12,7 +12,7 @@ PAM_EXTERN int pam_sm_setcred( pam_handle_t *pamh, int flags, int argc, const ch
 PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, const char **argv ) 
 {
 	
-	if(strcmp(system("lsblk --output SERIAL /dev/sdb"), system("cat /etc/pam.d/pam.pdrive/teste.txt")))
+	if(strcmp(system("lsblk --output SERIAL /dev/sdb"), system("cat /etc/pam.d/pam.pdrive/teste.txt"))==0)
 			{
 				printf("seriais iguais");
 				sleep(2);
