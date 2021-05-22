@@ -17,7 +17,11 @@ PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, cons
 				printf("seriais iguais");
 				return PAM_SUCCESS;
 			}
-	
+	else 
+	{
+		printf("\nSeriais diferentes\n");
+		return PAM_AUTH_ERR;
+	}
 
 	
 }
