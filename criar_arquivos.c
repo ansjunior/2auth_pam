@@ -13,10 +13,10 @@
 
 void makeDirPdrive(){
 
-    //variavel que grava o estado, 0 diretorio nao existe, -1 existe.
+    // Variavel que grava o estado, 0 diretorio nao existe, -1 existe.
     struct stat st = {0};
 	
-    //se existe, retorna msg, se não cria o diretório
+    //se existe, retorna msg, se não, cria o diretório.
 	if (stat("/etc/pam.d/pam.pdrive", &st) == -1) {
 	mkdir("/etc/pam.d/pam.pdrive", 0700);
 	}else{
@@ -27,9 +27,10 @@ void makeDirPdrive(){
 
 
 int main(int argc, char *argv[]){
-    
-		
-    puts("\n\n-> Attention, pendrive must be plugged in");
+    if(system("lsblk --output SERIAL /dev/sdb") == 0)
+    {
+	    
+	puts("\n\n-> Attention, pendrive must be plugged in");
     system("read -p \"\nEnter to begin\" foo");
 
     system("clear"); 
@@ -42,8 +43,14 @@ int main(int argc, char *argv[]){
     puts("   '/etc/pam.d/pam.pdrive'");
      makeDirPdrive();
      sleep(2);
-
     
+    }
+	
+    else 
+	{
+		printf("\nPen drive não plugado\n");
+		printf("Uninstall make file, plug the pen drive and try it again")
+	}
 
     system("read -p \"Press enter to continue\" foo");
 
