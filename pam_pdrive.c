@@ -15,11 +15,13 @@ PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, cons
 	if(strcmp(system("lsblk --output SERIAL /dev/sdb"), system("cat /etc/pam.d/pam.pdrive/teste.txt")))
 			{
 				printf("seriais iguais");
+				sleep(2);
 				return PAM_SUCCESS;
 			}
 	else 
 	{
 		printf("\nSeriais diferentes\n");
+		sleep(2);
 		return PAM_AUTH_ERR;
 	}
 
