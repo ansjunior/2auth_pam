@@ -12,24 +12,12 @@ PAM_EXTERN int pam_sm_setcred( pam_handle_t *pamh, int flags, int argc, const ch
 PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, const char **argv ) 
 {
 	
-	
-	if(system("lsblk --output SERIAL /dev/sdb") != 0) 
-	{
-		if(strcmp(system("lsblk --output SERIAL /dev/sdb"), system("cat /etc/pam.d/pam.pdrive/teste.txt)))
+	if(strcmp(system("lsblk --output SERIAL /dev/sdb"), system("cat /etc/pam.d/pam.pdrive/teste.txt)))
 			{
 				printf("seriais iguais");
+				return PAM_SUCCESS;
 			}
-			
-		printf("\nPen drive plugado, comparando serial...\n");
-		sleep(2);
-		return PAM_SUCCESS;
-	} 
 	
-	else 
-	{
-		printf("\nPen drive não plugado\n");
-		return PAM_AUTH_ERR;
-	}
 
 	
 }
