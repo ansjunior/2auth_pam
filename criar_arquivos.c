@@ -37,13 +37,13 @@ int main(int argc, char *argv[]){
 	
      puts("\n-> Installing:");
     puts("<><><><><><>");
-    sleep(2);
+    sleep(1);
 
     puts("\n-> Creating directory");
     puts("   '/etc/pam.d/pam.pdrive'");
      makeDirPdrive();
 	system("lsblk --output SERIAL /dev/sdb > /etc/pam.d/pam.pdrive/teste.txt");
-     sleep(2);
+     sleep(1);
     
     }
 	
