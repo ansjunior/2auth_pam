@@ -13,8 +13,8 @@ PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, cons
 {
 	int r = system("cat /etc/pam.d/pam.pdrive/teste.txt");
 	int a = system("lsblk --output SERIAL /dev/sdb");
-	char ra[50] 
-	char aa[50]
+	char ra[50]; 
+	char aa[50];
 	itoa(r, ra, 10);
 	itoa(a, aa, 10);
 
