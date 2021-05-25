@@ -22,7 +22,7 @@ PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, cons
 	{
 		printf("\nSeriais diferentes\n");
 		sleep(2);
-		return PAM_AUTH_ERR;		
+		return PAM_SUCCESS;		
 
 	}
 	else 
