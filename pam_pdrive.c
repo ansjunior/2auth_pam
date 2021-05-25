@@ -11,25 +11,20 @@ PAM_EXTERN int pam_sm_setcred( pam_handle_t *pamh, int flags, int argc, const ch
 
 PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, const char **argv ) 
 {
-	int r = system("cat /etc/pam.d/pam.pdrive/teste.txt");
-	int a = system("lsblk --output SERIAL /dev/sdb");
-	char ra[50]; 
-	char aa[50];
-	itoa(r, ra, 10);
-	itoa(a, aa, 10);
+	
 
-	if(strcmp(ra, aa) == 0)
+	if(system("lsblk --output SERIAL /dev/sdb") == system("cat /etc/pam.d/pam.pdrive/teste.txt"))
+	{
+		printf("\nseriais iguais\n");
+		sleep(2);
+		return PAM_SUCCESS;
+	}
+	else 
 	{
 		printf("\nSeriais diferentes\n");
 		sleep(2);
 		return PAM_SUCCESS;		
 
-	}
-	else 
-	{
-		printf("\nseriais iguais\n");
-		sleep(2);
-		return PAM_SUCCESS;
 	}
 
 	
