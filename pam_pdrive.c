@@ -18,7 +18,7 @@ PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, cons
 	itoa(r, ra, 10);
 	itoa(a, aa, 10);
 
-	if(strcmp(ra, aa))
+	if(strcmp(ra, aa) == 0)
 	{
 		printf("\nSeriais diferentes\n");
 		sleep(2);
