@@ -2,6 +2,7 @@
 #include <security/pam_ext.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include <unistd.h>
 
 PAM_EXTERN int pam_sm_setcred( pam_handle_t *pamh, int flags, int argc, const char **argv ) 
 {
