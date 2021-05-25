@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
+#include <math.h>
 
 PAM_EXTERN int pam_sm_setcred( pam_handle_t *pamh, int flags, int argc, const char **argv ) 
 {
@@ -21,8 +22,8 @@ PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, cons
 
 	char buffer[10];
 	char buffer2[10];
-	sprintf(serial1,buffer);
-	sprintf(serial2, buffer2);
+	itoa(serial1,buffer,10);
+	itoa(serial2, buffer2,10);
 	
 
 	if(strcmp(buffer, buffer2) == 0)
