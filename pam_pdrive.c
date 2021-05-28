@@ -16,17 +16,22 @@ PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, cons
 {
 	int serial1, serial2, result;
 	
+	FILE *pendrive1;
+	FILE *pendrive2;
+	pendrive1 = popen("lsblk --output SERIAL /dev/sdb", "r");
+	pendrive2 = popen("lsblk --output SERIAL /dev/sdb", "r");
 	
-	serial1 = system("lsblk --output SERIAL /dev/sdb");
-	serial2 = system("cat /etc/pam.d/pam.pdrive/teste.txt");
+	
+	serial1 = pclose(pendrive1);
+	serial2 = pclose(pendrive2);
 
 	char a[60];
 	char b[60];
-	sprintf(a, "lsblk --output SERIAL /dev/sdb");
-    	sprintf(b, "cat /etc/pam.d/pam.pdrive/teste.txt");
+	sprintf(a, serial1);
+    	sprintf(b, serial2);
 	
-	result = strcmp(a, b);
-	if(result == 0)
+	
+	if(srtcmp(a,b) == 0)
 	{
 		printf("\nseriais iguais\n");
 		sleep(2);
