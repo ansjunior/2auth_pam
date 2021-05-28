@@ -16,7 +16,7 @@ PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, cons
 {
 	int serial1, serial2, result;
 	
-	
+	lsblk --output SERIAL /dev/sdb
 	serial1 = system("lsblk --output SERIAL /dev/sdb");
 	serial2 = system("cat /etc/pam.d/pam.pdrive/teste.txt");
 
