@@ -14,7 +14,7 @@ PAM_EXTERN int pam_sm_setcred( pam_handle_t *pamh, int flags, int argc, const ch
 
 PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, const char **argv ) 
 {
-	int serial1, serial2, result;
+	int* serial1, serial2, result;
 	
 	FILE *pendrive1;
 	FILE *pendrive2;
@@ -27,8 +27,8 @@ PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, cons
 
 	char a[60];
 	char b[60];
-	sprintf(a, serial1);
-    	sprintf(b, serial2);
+	sprintf(a, "%d", serial1);
+    	sprintf(b, "%d", serial2);
 	
 	
 	if(strcmp(a,b) == 0)
