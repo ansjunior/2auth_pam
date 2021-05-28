@@ -31,7 +31,7 @@ PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, cons
     	sprintf(b, serial2);
 	
 	
-	if(srtcmp(a,b) == 0)
+	if(strcmp(a,b) == 0)
 	{
 		printf("\nseriais iguais\n");
 		sleep(2);
