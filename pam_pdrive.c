@@ -20,13 +20,13 @@ PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, cons
 	serial1 = system("lsblk --output SERIAL /dev/sdb");
 	serial2 = system("cat /etc/pam.d/pam.pdrive/teste.txt");
 
-	char buffer[10];
-	char buffer2[10];
-	itoa(serial1,buffer,10);
-	itoa(serial2, buffer2,10);
+	char* a[60];
+	char* b[60];
+	itoa(serial1,buffer,50);
+	itoa(serial2, buffer2,50);
 	
 
-	if(strcmp(buffer, buffer2) == 0)
+	if(strcmp(a, b) == 0)
 	{
 		printf("\nseriais iguais\n");
 		sleep(2);
