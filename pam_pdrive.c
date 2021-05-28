@@ -20,10 +20,10 @@ PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, cons
 	serial1 = system("lsblk --output SERIAL /dev/sdb");
 	serial2 = system("cat /etc/pam.d/pam.pdrive/teste.txt");
 
-	char* a[60];
-	char* b[60];
-	itoa(serial1, a,50);
-	itoa(serial2, b,50);
+	char a[60];
+	char b[60];
+	sprintf(a, "%d", serial1);
+    	sprintf(b, "%d", serial2);
 	
 
 	if(strcmp(a, b) == 0)
