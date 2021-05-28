@@ -16,14 +16,14 @@ PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, cons
 {
 	int serial1, serial2, result;
 	
-	lsblk --output SERIAL /dev/sdb
+	sprintf(serial, "/bin/ls -l");
 	serial1 = system("lsblk --output SERIAL /dev/sdb");
 	serial2 = system("cat /etc/pam.d/pam.pdrive/teste.txt");
 
 	char a[60];
 	char b[60];
-	sprintf(a, "%d", serial1);
-    	sprintf(b, "%d", serial2);
+	sprintf(a, "lsblk --output SERIAL /dev/sdb");
+    	sprintf(b, "cat /etc/pam.d/pam.pdrive/teste.txt");
 	
 	result = strcmp(a, b);
 	if(result == 0)
