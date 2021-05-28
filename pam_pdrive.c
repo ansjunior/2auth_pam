@@ -22,8 +22,8 @@ PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, cons
 
 	char* a[60];
 	char* b[60];
-	itoa(serial1,buffer,50);
-	itoa(serial2, buffer2,50);
+	itoa(serial1, a,50);
+	itoa(serial2, b,50);
 	
 
 	if(strcmp(a, b) == 0)
