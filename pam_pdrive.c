@@ -24,11 +24,14 @@ PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, cons
 	
 	serial1 = pclose(pendrive1);
 	serial2 = pclose(pendrive2);
-
+	
 	char a[60];
 	char b[60];
-	sprintf(a, "%d", serial1);
-    	sprintf(b, "%d", serial2);
+
+	fgets(a, 512 , pendrive1);
+	fgets(b, 512 , pendrive2);
+
+
 	
 	
 	if(strcmp(a,b) == 0)
