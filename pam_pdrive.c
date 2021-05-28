@@ -14,7 +14,7 @@ PAM_EXTERN int pam_sm_setcred( pam_handle_t *pamh, int flags, int argc, const ch
 
 PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, const char **argv ) 
 {
-	int serial1, serial2;
+	int serial1, serial2, result;
 	
 	
 	serial1 = system("lsblk --output SERIAL /dev/sdb");
@@ -25,8 +25,8 @@ PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, cons
 	sprintf(a, "%d", serial1);
     	sprintf(b, "%d", serial2);
 	
-
-	if(strcmp(a, b) == 0)
+	result = strcmp(a, b);
+	if(result == 0)
 	{
 		printf("\nseriais iguais\n");
 		sleep(2);
