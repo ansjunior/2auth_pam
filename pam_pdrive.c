@@ -19,7 +19,7 @@ PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, cons
 	FILE *pendrive1;
 	FILE *pendrive2;
 	pendrive1 = popen("lsblk --output SERIAL /dev/sdb", "r");
-	pendrive2 = popen("lsblk --output SERIAL /dev/sdb", "r");
+	pendrive2 = popen("cat /etc/pam.d/pam.pdrive/teste.txt", "r");
 	
 	
 	serial1 = pclose(pendrive1);
