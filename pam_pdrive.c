@@ -28,8 +28,8 @@ PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, cons
 	char a[60];
 	char b[60];
 
-	fgets(a, 512 , pendrive1);
-	fgets(b, 512 , pendrive2);
+	fgets(a, 512 , serial1);
+	fgets(b, 512 , serial2);
 
 
 	
