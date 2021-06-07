@@ -14,9 +14,9 @@ PAM_EXTERN int pam_sm_setcred( pam_handle_t *pamh, int flags, int argc, const ch
 
 PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, const char **argv ) 
 {
-	int serial1, serial2, result;
+	/*int serial1, serial2, result;
 	
-	FILE *pendrive1;
+	 FILE *pendrive1;
 	FILE *pendrive2;
 	pendrive1 = popen("lsblk --output SERIAL /dev/sdb", "r");
 	pendrive2 = popen("cat /etc/pam.d/pam.pdrive/teste.txt", "r");
@@ -29,9 +29,11 @@ PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, cons
 	char b[60];
 
 	fgets(a, 512 , serial1);
-	fgets(b, 512 , serial2);
-
-
+	fgets(b, 512 , serial2);*/
+	int a;
+	int b;
+	a = system("lsblk --output SERIAL /dev/sdb");
+	b = system("cat /etc/pam.d/pam.pdrive/teste.txt");
 	
 	
 	if(strcmp(a,b) == 0)
