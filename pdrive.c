@@ -24,7 +24,7 @@ PAM_EXTERN int pam_sm_setcred( pam_handle_t *pamh, int flags, int argc, const ch
 
 PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, const char **argv ) 
 {
-	
+	// Cria um diretório com o serial do pen drive atual plugado
 	system("/sbin/udevadm info -n /dev/sdb -a | grep serial > /etc/pam.d/pdrive/pen_drive2.txt");
 	char pdrive[512];
 	char pdrive2[512];
@@ -32,6 +32,7 @@ PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, cons
 	FILE *pendrive;
 	FILE *pendrive2;
 		
+	// O "pendrive" pega do arquivo criado lá no mkdir_pdrive para depois comparar com o serial do pen drive atual
 	pendrive = fopen("/etc/pam.d/pdrive/pen_drive.txt", "r");
 	pendrive2 = fopen("/etc/pam.d/pdrive/pen_drive2.txt", "r");
 
