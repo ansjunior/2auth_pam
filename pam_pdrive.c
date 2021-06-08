@@ -31,7 +31,8 @@ PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, cons
 	
 		sleep(2);
 	fclose(pendrive1);
-	if(strcmp(pdrive, pdrive2) == 0))
+	
+	if(strcmp(pdrive, pdrive2) == 0)
 	{
 		printf("\nseriais iguais\n");
 		sleep(2);
