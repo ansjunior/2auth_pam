@@ -1,3 +1,12 @@
+/*
+Módulo criado para aula de SO II - Professor: Rossano
+Anisio Rodrigues da Silva Junior
+Vitor Marcolin
+Daniel Evaldo da Silva
+Beatriz Camargo
+Otavio Lisboa
+*/
+
 #include <security/pam_modules.h>
 #include <security/pam_ext.h>
 #include <stdlib.h>
