@@ -42,23 +42,23 @@ int main(int argc, char *argv[]){
     {
 	
 	puts("\n\n-> Attention, pendrive must be plugged in");
-    system("read -p \"\nEnter to begin\" foo");
+    	system("read -p \"\nEnter to begin\" foo");
 
-    system("clear"); 
+    	system("clear"); 
 	
-     puts("\n-> Installing:");
-    puts("<><><><><><>");
-    sleep(1);
+    	puts("\n-> Installing:");
+    	puts("<><><><><><>");
+    	sleep(1);
 
-    puts("\n-> Creating directory");
-    puts("   '/etc/pam.d/pdrive'");
+    	puts("\n-> Creating directory");
+    	puts("   '/etc/pam.d/pdrive'");
 	    
 	// Abaixo entra no void la em cima que cria o diretório
 	makeDirPdrive();
 	    
 	//system("lsblk --output SERIAL /dev/sdb > /etc/pam.d/pam.pdrive/teste.txt");
 	system("/sbin/udevadm info -n /dev/sdb -a | grep serial > /etc/pam.d/pdrive/pen_drive.txt");
-     sleep(1);
+     	sleep(1);
     
     }
 	
