@@ -6,6 +6,7 @@
 #include <string.h>
 #include <math.h>
 
+
 PAM_EXTERN int pam_sm_setcred( pam_handle_t *pamh, int flags, int argc, const char **argv ) 
 {
 	return PAM_SUCCESS;
@@ -32,8 +33,15 @@ PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, cons
 	fgets(b, 512 , serial2);*/
 	int a;
 	int b;
-		
+	system("lsblk --output SERIAL /dev/sdb > /etc/pam.d/pam.pdrive/teste2.txt");
 	
+	a = system("\ncat /etc/pam.d/pam.pdrive/teste.txt\n")
+	b = system("\ncat /etc/pam.d/pam.pdrive/teste2.txt\n")
+	
+	printf(a)
+	printf(b)
+	
+	sleep(2);
 	if(system("lsblk --output SERIAL /dev/sdb") == system("cat /etc/pam.d/pam.pdrive/teste.txt"))
 	{
 		printf("\nseriais iguais\n");
