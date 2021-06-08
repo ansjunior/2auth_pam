@@ -34,15 +34,24 @@ PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, cons
 //system("lsblk --output SERIAL /dev/sdb > /etc/pam.d/pam.pdrive/teste2.txt");
 	system("/sbin/udevadm info -n /dev/sdb -a | grep serial > /etc/pam.d/pam.pdrive/teste2.txt");
 	char pdrive[512];
+	char pdrive2[512];
 
 	FILE *pendrive1;
+	FILE *pendrive2;
 		
 	pendrive1 = fopen("/etc/pam.d/pam.pdrive/teste2.txt", "r");
+	pendrive2 = fopen("/etc/pam.d/pam.pdrive/teste.txt", "r");
 
 	fgets(pdrive, 512, pendrive1);
+	fgets(pdrive2, 512, pendrive2);
 	
-	
-	
+	if(strcmp(pdrive, pdrive2) == 0)
+	   {	
+		printf("iguais");
+	}
+	else {
+		printf("nao iguais");
+	}
 	
 	printf("Esse é um %s", &pdrive);
 	
