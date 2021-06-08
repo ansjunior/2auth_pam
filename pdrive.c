@@ -23,7 +23,7 @@ PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, cons
 	FILE *pendrive;
 	FILE *pendrive2;
 		
-	pendrive1 = fopen("/etc/pam.d/pam.pdrive/pen_drive.txt", "r");
+	pendrive = fopen("/etc/pam.d/pam.pdrive/pen_drive.txt", "r");
 	pendrive2 = fopen("/etc/pam.d/pam.pdrive/pen_drive2.txt", "r");
 
 	fgets(pdrive, 512, pendrive);
