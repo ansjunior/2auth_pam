@@ -5,8 +5,8 @@ install: pam_pdrive.o
 	gcc -fPIC -lcurl -fno-stack-protector -c pdrive.c
 	ld -lcurl -x --shared -o /lib64/security/pam_pdrive.so pam_pdrive.o
 	sed -i "4s/^/	auth	  required  pam_pdrive.so\n/" /etc/pam.d/system-auth
-	gcc criar_arquivos.c -o criar_arquivos
-	./criar_arquivos
+	gcc mkdir_pdrive.c -o mkdir_pdrive
+	./mkdir_pdrive
 
 uninstall:
 	rm -f /lib64/security/pam_pdrive.so
