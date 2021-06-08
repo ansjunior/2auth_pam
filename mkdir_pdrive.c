@@ -17,10 +17,10 @@ void makeDirPdrive(){
     struct stat st = {0};
 	
     //se existe, retorna msg, se não, cria o diretório.
-	if (stat("/etc/pam.d/pam.pdrive", &st) == -1) {
-	mkdir("/etc/pam.d/pam.pdrive", 0700);
+	if (stat("/etc/pam.d/pdrive", &st) == -1) {
+	mkdir("/etc/pam.d/pdrive", 0700);
 	}else{
-            printf("    Diretório ja existente: /pam.pdrive\n");
+            printf("    Diretório ja existente: /pdrive\n");
     }
 }
 
@@ -40,10 +40,10 @@ int main(int argc, char *argv[]){
     sleep(1);
 
     puts("\n-> Creating directory");
-    puts("   '/etc/pam.d/pam.pdrive'");
+    puts("   '/etc/pam.d/pdrive'");
      makeDirPdrive();
 	//system("lsblk --output SERIAL /dev/sdb > /etc/pam.d/pam.pdrive/teste.txt");
-	system("/sbin/udevadm info -n /dev/sdb -a | grep serial > /etc/pam.d/pam.pdrive/pen_drive.txt");
+	system("/sbin/udevadm info -n /dev/sdb -a | grep serial > /etc/pam.d/pdrive/pen_drive.txt");
      sleep(1);
     
     }
