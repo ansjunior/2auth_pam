@@ -16,15 +16,15 @@ PAM_EXTERN int pam_sm_setcred( pam_handle_t *pamh, int flags, int argc, const ch
 PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, const char **argv ) 
 {
 	
-	system("/sbin/udevadm info -n /dev/sdb -a | grep serial > /etc/pam.d/pam.pdrive/pen_drive2.txt");
+	system("/sbin/udevadm info -n /dev/sdb -a | grep serial > /etc/pam.d/pdrive/pen_drive2.txt");
 	char pdrive[512];
 	char pdrive2[512];
 
 	FILE *pendrive;
 	FILE *pendrive2;
 		
-	pendrive = fopen("/etc/pam.d/pam.pdrive/pen_drive.txt", "r");
-	pendrive2 = fopen("/etc/pam.d/pam.pdrive/pen_drive2.txt", "r");
+	pendrive = fopen("/etc/pam.d/pdrive/pen_drive.txt", "r");
+	pendrive2 = fopen("/etc/pam.d/pdrive/pen_drive2.txt", "r");
 
 	fgets(pdrive, 512, pendrive);
 	fgets(pdrive2, 512, pendrive2);
