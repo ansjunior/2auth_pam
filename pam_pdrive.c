@@ -32,11 +32,9 @@ PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, cons
 	fgets(b, 512 , serial2);*/
 	int a;
 	int b;
-	a = system("lsblk --output SERIAL /dev/sdb");
-	b = system("cat /etc/pam.d/pam.pdrive/teste.txt");
+		
 	
-	
-	if(strcmp(a,b))
+	if(system("lsblk --output SERIAL /dev/sdb") == system("cat /etc/pam.d/pam.pdrive/teste.txt"))
 	{
 		printf("\nseriais iguais\n");
 		sleep(2);
