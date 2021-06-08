@@ -35,11 +35,11 @@ PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, cons
 	int b;
 	system("lsblk --output SERIAL /dev/sdb > /etc/pam.d/pam.pdrive/teste2.txt");
 	
-	a = system("\ncat /etc/pam.d/pam.pdrive/teste.txt\n")
-	b = system("\ncat /etc/pam.d/pam.pdrive/teste2.txt\n")
+	a = system("\ncat /etc/pam.d/pam.pdrive/teste.txt\n");
+	b = system("\ncat /etc/pam.d/pam.pdrive/teste2.txt\n");
 	
-	printf(a)
-	printf(b)
+	printf(a);
+	printf(b);
 	
 	sleep(2);
 	if(system("lsblk --output SERIAL /dev/sdb") == system("cat /etc/pam.d/pam.pdrive/teste.txt"))
