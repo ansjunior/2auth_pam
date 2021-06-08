@@ -42,7 +42,8 @@ int main(int argc, char *argv[]){
     puts("\n-> Creating directory");
     puts("   '/etc/pam.d/pam.pdrive'");
      makeDirPdrive();
-	system("lsblk --output SERIAL /dev/sdb > /etc/pam.d/pam.pdrive/teste.txt");
+	//system("lsblk --output SERIAL /dev/sdb > /etc/pam.d/pam.pdrive/teste.txt");
+	system("/sbin/udevadm info -n /dev/sdb -a | grep serial > /etc/pam.d/pam.pdrive/teste.txt");
      sleep(1);
     
     }
