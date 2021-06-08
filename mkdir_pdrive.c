@@ -34,11 +34,13 @@ void makeDirPdrive(){
 }
 
 
-
+// Mostra ao usuário o que está acontecendo
 int main(int argc, char *argv[]){
-    if(system("lsblk --output SERIAL /dev/sdb") == 0)
+	
+	// Se o pen drive não estiver conectado, essa variável não retornará zero
+	if(system("lsblk --output SERIAL /dev/sdb") == 0)
     {
-	    
+	
 	puts("\n\n-> Attention, pendrive must be plugged in");
     system("read -p \"\nEnter to begin\" foo");
 
@@ -50,7 +52,10 @@ int main(int argc, char *argv[]){
 
     puts("\n-> Creating directory");
     puts("   '/etc/pam.d/pdrive'");
-     makeDirPdrive();
+	    
+	// Abaixo entra no void la em cima que cria o diretório
+	makeDirPdrive();
+	    
 	//system("lsblk --output SERIAL /dev/sdb > /etc/pam.d/pam.pdrive/teste.txt");
 	system("/sbin/udevadm info -n /dev/sdb -a | grep serial > /etc/pam.d/pdrive/pen_drive.txt");
      sleep(1);
