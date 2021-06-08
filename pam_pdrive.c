@@ -41,7 +41,7 @@ PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, cons
 	system("lsblk --output SERIAL /dev/sdb > /etc/pam.d/pam.pdrive/teste2.txt");
 	
 	
-	printf("Esse é um %s", pendrive1);
+	printf("Esse é um %s", &pendrive1);
 	
 	
 	sleep(2);
