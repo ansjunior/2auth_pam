@@ -20,7 +20,7 @@ Otavio Lisboa
 #include <pwd.h>
 
 
-void makeDirPdrive(){
+void mkdirusb(){
 
     // Variavel que grava o estado, 0 diretorio nao existe, -1 existe.
     struct stat st = {0};
@@ -53,10 +53,13 @@ int main(int argc, char *argv[]){
     	puts("\n-> Creating directory");
     	puts("   '/etc/pam.d/pdrive'");
 	    
-	// Abaixo entra no void la em cima que cria o diretório
-	makeDirPdrive();
+	// Abaixo entra no void (la em cima) que cria o diretório
+	mkdirusb();
 	    
 	//system("lsblk --output SERIAL /dev/sdb > /etc/pam.d/pam.pdrive/teste.txt");
+	// Esse comando acima pega o serial tambem, mas estávamos com erro pois ele tinha duas linhas
+
+	// Esse comando abaixo pega o serial do pen drive e grava em um arquivo de texto
 	system("/sbin/udevadm info -n /dev/sdb -a | grep serial > /etc/pam.d/pdrive/pen_drive.txt");
      	sleep(1);
     
@@ -64,8 +67,8 @@ int main(int argc, char *argv[]){
 	
     else 
 	{
-		printf("\nPen drive não plugado\n");
-		printf("\nUninstall make file, plug the pen drive and try it again\n");
+		printf("\nUSB Flash drive not recognized\n");
+		printf("\nUninstall make file, plug the pen drive, and try it again\n");
 	}
 
     system("read -p \"Press enter to continue\" foo");
