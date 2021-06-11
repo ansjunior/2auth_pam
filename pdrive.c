@@ -43,13 +43,13 @@ PAM_EXTERN int pam_sm_authenticate( pam_handle_t *pamh, int flags,int argc, cons
 		
 	if(strcmp(pdrive, pdrive2) == 0)
 	{
-		printf("\nOs seriais são iguais\n");
+		printf("\nThe serials are the same\n");
 		sleep(1);
 		return PAM_SUCCESS;
 	}
 	else 
 	{
-		printf("\nOs seriais são diferentes\n");
+		printf("\nThe serials are not the same\n");
 		sleep(1);
 		return PAM_AUTH_ERR;		
 
