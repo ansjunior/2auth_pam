@@ -4,7 +4,6 @@ Anisio Rodrigues da Silva Junior
 Vitor Marcolin
 Daniel Evaldo da Silva
 Beatriz Camargo
-Otavio Lisboa
 */
 
 #include <security/pam_modules.h>
